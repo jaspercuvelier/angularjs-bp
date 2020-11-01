@@ -13,3 +13,9 @@ function include(filename,data){
 }
 
 
+const props = PropertiesService.getScriptProperties()
+const [email, key, projectId] = [props.getProperty('client_email'), props.getProperty('private_key'), props.getProperty('project_id')];
+//https://github.com/grahamearley/FirestoreGoogleAppsScript
+const firestore = FirestoreApp.getFirestore(email, key, projectId);
+
+
